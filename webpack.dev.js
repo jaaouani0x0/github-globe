@@ -27,4 +27,27 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+  resolve: {
+    fallback: {
+      "stream": require.resolve("stream-browserify"),
+      "path": require.resolve("path-browserify"),
+      "http": require.resolve("stream-http"),
+      "https": require.resolve("https-browserify"),
+      "os": require.resolve("os-browserify/browser"),
+      "util": require.resolve("util/"),
+      "vm": require.resolve("vm-browserify"),
+      "zlib": require.resolve("browserify-zlib"),
+      "crypto": require.resolve("crypto-browserify"),
+      "buffer": require.resolve("buffer/"),
+      "assert": require.resolve("assert/"),
+      "constants": require.resolve("constants-browserify"),
+      "fs": false,
+      "esbuild": false,
+      "@swc/core": false,
+      "child_process": false,
+      "dgram": false,
+      "worker_threads": false,
+      "inspector": false
+    }
+  },
 };
